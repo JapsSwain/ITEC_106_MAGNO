@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Sequence</title>
+</head>
+<body>
+
+     <script>
+     function fibonacciSequence(numTerms) {
+    let fibSequence = [0, 1];
+
+    for (let i = 2; i < numTerms; i++) {
+        fibSequence.push(fibSequence[i - 1] + fibSequence[i - 2]);
+    }
+    return fibSequence;
+}
+function main() {
+    while (true) {
+        let numTerms = parseInt(prompt("Enter the number of terms in the Fibonacci sequence (less than 100):"));
+        if (!isNaN(numTerms) && numTerms < 100 && numTerms > 0) {
+            let sequence = fibonacciSequence(numTerms);
+            console.log("Fibonacci sequence:");
+            console.log(sequence);
+            break;
+        } else {
+            console.log("Error: Please enter a valid integer less than 100.");
+        }
+    }
+}
+main();
+</script>
+    
+</body>
+</html>
